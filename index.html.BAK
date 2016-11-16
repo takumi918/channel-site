@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>いけちゃんの休憩所</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="img/favicon.png" type="image/png">
+</head>
+<body>
+	<p id="title">いけちゃんの休憩所</p>
+	<p id="subtitle">いけちゃんねるのいけちゃんが何かを載せるかもしれないサイト</p>
+	<br>
+	<br>
+	<br>
+
+<!-- メニューバー1 -->
+	<div onclick="obj=document.getElementById('open1').style; obj.display=(obj.display=='none')?'block':'none';">
+		<a style="cursor: pointer;font-size: 25px;" id="youtube"> ▶ YouTube</a>
+		<hr>
+	</div>
+	<div id="open1" style="display: none;clear: both;">
+		<!--メニューバー1 内容 -->
+		<a href="https://www.youtube.com/channel/UCxoxozwROZmEUVRruEsnyCQ" target="_blank">https://www.youtube.com/channel/UCxoxozwROZmEUVRruEsnyCQ</a>
+		<br>
+		<span>チャンネル登録していない方は是非お願いします</span>
+		<br>
+		<div id="channelmovie">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/9RwjuFqIoWs" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<br>
+		<p style="text-align: center;">いけちゃんねる紹介動画</p>
+		<br>
+		<br>
+		<span style="position: relative;left: 40px;">いけちゃんねるの動画一覧</span>
+		<hr width="90%" style="position: relative;right: 30px;">
+		<div style="position: relative;left: 60px;">
+			2016/10/11 チャンネル紹介動画 <a href="https://youtu.be/9RwjuFqIoWs" target="_blank">https://youtu.be/9RwjuFqIoWs</a><br>
+			2016/11/9 PPAPのゲームを勝手に作った☆ <a href="https://youtu.be/Wkw-H_YV-7o" target="_blank">https://youtu.be/Wkw-H_YV-7o</a>
+		</div>
+	</div>
+<!-- メニューバー1 ここまで -->
+	<br>
+<!-- メニューバー2 -->
+	<div onclick="obj=document.getElementById('open2').style; obj.display=(obj.display=='none')?'block':'none';">
+		<a style="cursor: pointer;font-size: 25px;" id="garakuta"> ▶ いけちゃんの作品とか</a>
+		<hr>
+	</div>
+	<div id="open2" style="display: none;clear: both;">
+		<!--メニューバー2 内容 -->
+		<p>いけちゃんがクソゲーを作ったらここに公開するよ</p>
+		<p>
+			<a href="http://ikechannel.tk/ppapgame.html" target="_blank">2016/10/11 PPAPゲーム</a> ※スマホでの動作は確認していません
+		</p>
+		
+	</div>
+<!-- メニューバー2 ここまで -->
+	<br>
+<!-- メニューバー3 -->
+	<div onclick="obj=document.getElementById('open3').style; obj.display=(obj.display=='none')?'block':'none';">
+		<a style="cursor: pointer;font-size: 25px;" id="link"> ▶ リンク</a>
+		<hr>
+	</div>
+	<div id="open3" style="display: none;clear: both;">
+		<!--メニューバー3 内容 -->
+		<a href="https://twitter.com/Tcreeper0918" target="_blank" style="font-family: Tanuki;">いけちゃんのツイッター</a>
+		<br>
+		<br>
+		<span style="position: relative;left: 40px; font-family: Tanuki;">いけちゃんの備忘録</span>
+		<hr width="90%" style="position: relative;right: 30px;">
+		<div style="position: relative;left: 50px;">
+			気が向いたら書く()
+		</div>
+		
+	</div>
+<!-- メニューバー3 ここまで -->
+	<br>
+	<br>
+	<span style="font-size: 25px;">自己紹介</span>
+	<hr>
+	<p style="position:relative;left: 40px; font-family: メイリオ;">
+		　どうも。いけちゃんねるのいけちゃんでう。趣味で動画をあげている者です。<br>
+		というわけで、最近ようつべを始めました。<br>
+		まあまだ再生回数二桁だけど(^^;)<br>
+		いけちゃんねるでは、チャンネル紹介動画で言った通り、自分で作ったクソゲーの紹介、ゆっくり実況などを中心に活動する予定です。<br>
+		まずはマイナーなゲームの実況/解説から始めていきます。<br>
+		チャンネル紹介動画で言った通り、わたくし動画の編集下手です。ていうのも、<br>
+		<span style="font-weight: bold;">Windows ムービーメーカーを未だに使ってます。</span><br>
+		そのため、高度な編集ができません。動画のクオリティについては、堪忍してください。<br>
+		<br>
+		以下、うｐ主のぱそこんのスペック(低性能)<br>
+		<br>
+		CPU：Intel Celeron CPU N3060(省電力モデルなので低性能)<br>
+		RAM：4GB(最大8GB)<br>
+		グラフィック：Intel HD Graphics 400<br>
+		HDD：512GB<br>
+		画面：フルHD<br>
+		まあ入門モデルなのでこんなモンです。<br>
+		グラフィック非力なくせに画面フルHDで重い。<br>
+		<br>
+		以下、うｐ主の詳細<br>
+		<br>
+		学生<br>
+		趣味：マイクラ、プログラミング(Unityでゲーム開発とか、Electronでちょっとしたアプリ作ったりしてます)
+	</p>
+</body>
+</html>
