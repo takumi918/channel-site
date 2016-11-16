@@ -1,0 +1,23 @@
+@font-face{
+	font-family: Tanuki;
+	src: url('./wf/TanukiMagic.ttf') format("truetype");
+}
+
+body{
+	background-color: #EDF7FF;
+}
+
+#title{
+	text-align: center;
+	text-shadow: 5px 5px 1px #999999;
+	font-size: 50px;
+	font-family: Tanuki;
+}
+
+#subtitle{
+	text-align: center;
+}
+
+#channelmovie{
+	text-align: center;
+}
