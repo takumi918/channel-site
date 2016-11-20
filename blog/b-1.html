@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="copyright" content="Nikukyu-Punch" />
+<title>【Adobe Air】 HTMLでデスクトップアプリを作成する一連の流れをまとめた-いけちゃんの日記</title>
+<meta name="description" content="いけちゃんが暇つぶし程度に書くブログ" />
+<meta name="keywords" content="いけちゃんの休憩所,いけちゃんの日記,いけちゃんの備忘録,YouTube,ブログ" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="icon" type="image/png" href="https://dl.dropboxusercontent.com/s/v7q95p7jxkewlom/favicon.png">
+</head>
+
+
+<body>
+
+
+<div id="container">
+
+
+<div id="main">
+
+
+<div id="header">
+<h1>いけちゃんが暇つぶし程度に書くブログ</h1>
+</div>
+<!--/header-->
+
+
+<div class="mainbox">
+
+<h2>HTMLでデスクトップアプリを作成する一連の流れをまとめた</h2>
+<p>
+	ということで、今日、Adobe Airを使って簡単なメモアプリ(クリップボード)を作ってみましたので、その過程を紹介します。<br />
+	意外と解説してるサイト少ないので書きました。<br />
+	今回作ったのは、このようなものになります。<br />
+	<!--codepen-->
+	<p data-height="265" data-theme-id="0" data-slug-hash="vygbNa" data-default-tab="html,result" data-user="takumi" data-embed-version="2" data-pen-title="vygbNa" class="codepen">See the Pen <a href="http://codepen.io/takumi/pen/vygbNa/">vygbNa</a> by takumi (<a href="http://codepen.io/takumi">@takumi</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+	<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+	<!--codepen--><br />
+	これをデスクトップアプリにしていきます。
+</p>
+
+<h2>HTMLを書く</h2>
+<p>
+	まずはメインのHTMLの作成です。Adobe Airでは、ローカルファイルにアクセスするなど高度なことができますが、これは練習なので簡単なものにしました。<br />
+	上の埋め込みコードからコピペできます。
+</p>
+
+<h2>XMLの作成</h2>
+<p>
+	ウィンドウのサイズなどの設定は、xmlファイルに記述します。<br />
+	＜アプリ名＞.xml<br />
+	というファイルを作成して、以下のコードをコピペしてください。
+	<p>
+		&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br />
+		&lt;application xmlns="http://ns.adobe.com/air/application/1.5" minimumPatchLevel="0"&gt;<br />
+		&lt;id&gt;index.html&lt;/id&gt;<br />
+		&lt;version&gt;1.0&lt;/version&gt;<br />
+		&lt;filename&gt;AppOption&lt;/filename&gt;<br />
+		&lt;initialWindow&gt;<br />
+		&lt;content&gt;index.html&lt;/content&gt;<br />
+		&lt;visible&gt;true&lt;/visible&gt;<br />
+		&lt;width&gt;380&lt;/width&gt;<br />
+		&lt;height&gt;260&lt;/height&gt;<br />
+		&lt;/initialWindow&gt;<br />
+		&lt;/application&gt;<br />
+	</p>
+	widthタグの中とheightタグの中は、ウィンドウのサイズです。状況に応じて編集してください。<br />
+	尚、XMLの中身はAdobe Air SDKのバージョンによって変わります。
+</p>
+
+<h2>デバッグ</h2>
+<p>
+	HTMLとXMLを作成したら、デバッグを行えます。<br />
+	<br />
+	※この記事は、SDKのインストール・環境変数の設定が住んでいるものとして書いています。<br />
+	　そんなのしてないよ！って方はググってください。<br />
+	<br />
+	コマンドラインでこれを実行してください。<br />
+	<br />
+	adl ＜アプリ名＞.xml<br />
+	<br />
+	するとアプリが立ち上がります。
+</p>
+
+<h2>配布</h2>
+<p>
+	配布するためにインストーラを作るのですが、そのために"証明書"を作らなければなりません。<br />
+	機関から発行してもらうのですが、いちいちそんなことしてられないので、(証明されていない)証明書を作ります。<br />
+	コマンドラインでこれを実行してください。<br />
+	<br />
+	adt -certificate -cn test 1024-RSA test.pfx pass<br />
+	<br />
+	test.pfxというファイルができましたか？
+</p>
+<p>
+	次はいよいよインストーラの作成です。<br />
+	.airという、Airアプリのインストーラ形式のファイルを作ります。<br />
+	コマンドはこんな感じです。<br />
+	<br />
+	adt -package -storetype pkcs12 -keystore test.pfx -storepass pass <インストーラ名>.air <アプリ名>.xml index.html <その他同梱ファイル(js,css,画像など)> <その他同梱ファイル(js,css,画像など)><br />
+	<br />
+	ここでは、インストーラ名を"notepad.air"、アプリ名を"notepad.xml"とします。その他同梱ファイルというのは、ここではjquery-2.1.1.min.jsのみです。<br />
+	この場合、コマンドは<br />
+	<br />
+	adt -package -storetype pkcs12 -keystore test.pfx -storepass pass notepad.air notepad.xml index.html jquery-2.1.1.min.js<br />
+	<br />
+	となります。
+</p>
+
+<h2>実行</h2>
+<p>
+	notepad.airというファイルができましたか？<br />
+	これをダブルクリックしてインストールします。<br />
+	<img src="images/App.png" width="688px" height="343px">
+</p>
+
+</div>
+<!--/mainbox-->
+
+</div>
+<!--/main-->
+
+
+<div id="side">
+
+<a href="http://ikechannel.tk"><img src="images/logo.gif" alt="SAMPLE WEBSITE" name="logo" width="200" height="140" id="logo" /></a><br />
+<ul class="menu">
+<li><a href="index.html">トップページ</a></li>
+<li><a href="https://www.youtube.com/channel/UCxoxozwROZmEUVRruEsnyCQ">YouTube</a></li>
+<li><a href="link.html">リンク</a></li>
+</ul>
+
+<h3>自己紹介</h3>
+<p>
+	いけ<br />
+	学生。<br />
+	趣味はマイクラ。Unityでゲーム開発。
+</p>
+
+</div>
+<!--/side-->
+
+
+<div id="footer">
+Copyright&copy; 2016 "いけちゃんの休憩所" All Rights Reserved.<br />
+<a href="http://nikukyu-punch.com/" target="_blank">Template design by Nikukyu-Punch</a>
+</div>
+<!--/footer-->
+
+
+</div>
+<!--/container-->
+
+
+</body>
+</html>
