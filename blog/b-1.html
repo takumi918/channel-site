@@ -58,7 +58,7 @@
 		&lt;application xmlns="http://ns.adobe.com/air/application/1.5" minimumPatchLevel="0"&gt;<br />
 		&lt;id&gt;index.html&lt;/id&gt;<br />
 		&lt;version&gt;1.0&lt;/version&gt;<br />
-		&lt;filename&gt;AppOption&lt;/filename&gt;<br />
+		&lt;filename&gt;＜アプリ名＞&lt;/filename&gt;<br />
 		&lt;initialWindow&gt;<br />
 		&lt;content&gt;index.html&lt;/content&gt;<br />
 		&lt;visible&gt;true&lt;/visible&gt;<br />
@@ -117,6 +117,31 @@
 	<img src="images/App.png" width="688px" height="343px">
 </p>
 
+<h2>アイコン</h2>
+<p>
+	インストールはできましたが、<br />
+	<img src="images/味気ないアイコン.png"><br />
+	こんな味気ないアイコンになったと思います。<br />
+	せっかくなのでオリジナルのアイコンに変えてみます。
+</p>
+<p>
+	まず、アイコンの画像を4つ用意します。
+	16.png 32.png 48.png 128.png<br />
+	　　　　　<img src="images/16.png">　　　　　<img src="images/32.png">　　　　　<img src="images/64.png">　　　　　<img src="images/128.png">　　　　　センスが...w<br />
+	サイズはそれぞれ 16x16,32x32,48x48(64x64じゃないので注意！),128x128 となります。<br />
+	index.htmlなどがあるファイルにぶち込んでください。
+</p>
+<p>
+	コマンドがちょっと変わります。
+</p>
+<p>
+	adt -package -storetype pkcs12 -keystore test.pfx -storepass pass notepad.air notepad.xml index.html jquery-2.1.1.min.js 16.png 32.png 48.png 128.png
+</p>
+<p>
+	インストールして実行して、アイコンが適応されていたら成功。<br />
+	<img src="images/ぺ.png">
+</p>
+
 </div>
 <!--/mainbox-->
 
@@ -138,6 +163,11 @@
 	いけ<br />
 	学生。<br />
 	趣味はマイクラ。Unityでゲーム開発。
+</p>
+
+<h3>スマホ・タブレットの方へ</h3>
+<p>
+	画面を横向きにして閲覧してください。
 </p>
 
 </div>
