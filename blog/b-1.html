@@ -42,13 +42,13 @@
 	これをデスクトップアプリにしていきます。
 </p>
 
-<h2>HTMLを書く</h2>
+<h2>１.HTMLを書く</h2>
 <p>
 	まずはメインのHTMLの作成です。Adobe Airでは、ローカルファイルにアクセスするなど高度なことができますが、これは練習なので簡単なものにしました。<br />
 	上の埋め込みコードからコピペできます。
 </p>
 
-<h2>XMLの作成</h2>
+<h2>２.XMLの作成</h2>
 <p>
 	ウィンドウのサイズなどの設定は、xmlファイルに記述します。<br />
 	＜アプリ名＞.xml<br />
@@ -71,7 +71,7 @@
 	尚、XMLの中身はAdobe Air SDKのバージョンによって変わります。
 </p>
 
-<h2>デバッグ</h2>
+<h2>３.デバッグ</h2>
 <p>
 	HTMLとXMLを作成したら、デバッグを行えます。<br />
 	<br />
@@ -85,7 +85,7 @@
 	するとアプリが立ち上がります。
 </p>
 
-<h2>配布</h2>
+<h2>４.配布</h2>
 <p>
 	配布するためにインストーラを作るのですが、そのために"証明書"を作らなければなりません。<br />
 	機関から発行してもらうのですが、いちいちそんなことしてられないので、(証明されていない)証明書を作ります。<br />
@@ -110,14 +110,14 @@
 	となります。
 </p>
 
-<h2>実行</h2>
+<h2>５.実行</h2>
 <p>
 	notepad.airというファイルができましたか？<br />
 	これをダブルクリックしてインストールします。<br />
 	<img src="images/App.png" width="688px" height="343px">
 </p>
 
-<h2>アイコン</h2>
+<h2>おまけ.アイコン</h2>
 <p>
 	インストールはできましたが、<br />
 	<img src="images/味気ないアイコン.png"><br />
@@ -132,6 +132,27 @@
 	index.htmlなどがあるファイルにぶち込んでください。
 </p>
 <p>
+	xmlを書き換えて下さい。<br />
+	&lt;?xml version="1.0" encoding="utf-8" ?&gt;<br />
+	&lt;application xmlns="http://ns.adobe.com/air/application/1.5" minimumPatchLevel="0"&gt;<br />
+	&lt;id&gt;example.html.HelloAIR&lt;/id&gt;<br />
+	&lt;version&gt;1.0&lt;/version&gt;<br />
+	&lt;filename&gt;＜アプリ名＞&lt;/filename&gt;<br />
+	&lt;initialWindow&gt;<br />
+	&lt;content&gt;index.html&lt;/content&gt;<br />
+	&lt;visible&gt;true&lt;/visible&gt;<br />
+	&lt;width&gt;380&lt;/width&gt;<br />
+	&lt;height&gt;260&lt;/height&gt;<br />
+	&lt;/initialWindow&gt;<br />
+	&lt;icon&gt;<br />
+    &lt;image16x16&gt;16.png&lt;/image16x16&gt;<br />
+    &lt;image32x32&gt;32.png&lt;/image32x32&gt;<br />
+    &lt;image48x48&gt;48.png&lt;/image48x48&gt;<br />
+    &lt;image128x128&gt;128.png&lt;/image128x128&gt;<br />
+	&lt;/icon&gt;<br />
+	&lt;/application&gt;<br />
+</p>
+<p>
 	コマンドがちょっと変わります。
 </p>
 <p>
@@ -139,7 +160,18 @@
 </p>
 <p>
 	インストールして実行して、アイコンが適応されていたら成功。<br />
-	<img src="images/ぺ.png">
+	<img src="images/pe.jpg">
+</p>
+
+<h2>最後に</h2>
+<p>
+	この.airファイルを.exeのよく見慣れたネイティブインストーラにする方法がありますが、ここでは紹介しません。<br />
+	その方法は、ググれば結構載ってるので。<br />
+	.airファイルを作成するまでの手順が載ってるサイトは、探しても意外と見つからなかったので、自分の備忘録も兼ねて記事を書きました。
+</p>
+<p>
+	こんな感じの記事なら定期的に書けそうなので、頑張ります。<br />
+	このサイトWordPressもブログサービスも使ってないから更新するの大変なんだよなー...
 </p>
 
 </div>
