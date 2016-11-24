@@ -5,9 +5,9 @@
 <meta http-equiv="Content-Style-Type" content="text/css" />
 <meta http-equiv="Content-Script-Type" content="text/javascript" />
 <meta name="copyright" content="Nikukyu-Punch" />
-<title>いけちゃんの日記-リンク</title>
+<title>ページタイトル-いけちゃんの日記</title>
 <meta name="description" content="いけちゃんが暇つぶし程度に書くブログ" />
-<meta name="keywords" content="いけちゃんの休憩所,いけちゃんの日記,いけちゃんの備忘録,YouTube,ブログ" />
+<meta name="keywords" content="いけちゃんの休憩所,いけちゃんの日記,いけちゃんの備忘録,YouTube,ブログ,キーワード" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 <link rel="icon" type="image/png" href="https://dl.dropboxusercontent.com/s/v7q95p7jxkewlom/favicon.png">
 </head>
@@ -30,28 +30,10 @@
 
 <div class="mainbox">
 
-<h2 class="mb1em">リンク</h2>
-
-<table class="ta1">
-<tr>
-<th><a href="https://www.youtube.com/channel/UCxoxozwROZmEUVRruEsnyCQ" target="_blank">YouTube</a></th>
-<td>ようつべ。チャンネル登録よろしくね。</td>
-</tr>
-<tr>
-<th><a href="https://www.youtube.com/channel/UCHd-ArcI-eczkBSkSGC1IQw" target="_blank">YouTube(サブ)</a></th>
-<td>サブチャンネルの"ラヴァちゃんねる"だよ。チャンネル登録よろしくね。</td>
-</tr>
-<tr>
-<th><a href="https://twitter.com/Tcreeper0918" target="_blank">Twitter</a></th>
-<td>ツイッター。フォローしてね。</td>
-</tr>
-<tr>
-<th><a href="http://ikechannel.tk" target="_blank">いけちゃんの休憩所</a></th>
-<td>いけちゃんねるのサイト。</td>
-</tr>
-</table>
-
-<p>リンク。</p>
+<h2>見出し</h2>
+<p>
+	内容
+</p>
 
 </div>
 <!--/mainbox-->
@@ -68,9 +50,9 @@
 
 <a href="http://ikechannel.tk"　target="_blank"><img src="images/logo.gif" alt="SAMPLE WEBSITE" name="logo" width="200" height="140" id="logo" /></a><br />
 <ul class="menu">
-<li><a href="index.html"　target="_blank">トップページ</a></li>
-<li><a href="https://www.youtube.com/channel/UCxoxozwROZmEUVRruEsnyCQ"　target="_blank">YouTube</a></li>
-<li><a href="link.html">リンク</a></li>
+<li><a href="index.html" target="_blank">トップページ</a></li>
+<li><a href="https://www.youtube.com/channel/UCxoxozwROZmEUVRruEsnyCQ" target="_blank">YouTube</a></li>
+<li><a href="link.html" target="_blank">リンク</a></li>
 </ul>
 
 <h3>自己紹介</h3>
@@ -85,11 +67,19 @@
 	画面を横向きにして閲覧してください。
 </p>
 
-<h3>記事一覧</h3>
+<h3>スポンサーリンク</h3>
 <p>
-	・2016/11/22<br />
-	　<a href="http://ikechannel.tk/blog/b-1.html"　target="_blank">【Adobe air】HTMLでデスクト...</a>
+	<!-- admax -->
+	<script src="http://adm.shinobi.jp/s/a5c4ac2c0a9d2d97427e9ba5a89fa1c3"></script>
+	<!-- admax -->
 </p>
+<p>
+	<!-- admax -->
+	<script src="http://adm.shinobi.jp/s/a5c4ac2c0a9d2d97427e9ba5a89fa1c3"></script>
+	<!-- admax -->
+</p>
+
+<script src="kijiitiran.js"></script>
 
 </div>
 <!--/side-->
